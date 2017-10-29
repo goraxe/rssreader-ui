@@ -11,8 +11,7 @@ module.exports = function(config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-junit-reporter'),
-      require('karma-coveralls'),
-      require('karma-coverage'),
+      require('karma-coverage-istanbul-reporter'),
       require('@angular/cli/plugins/karma')
     ],
     client: {
@@ -25,21 +24,14 @@ module.exports = function(config) {
       useBrowserName: false,
       suite: '' // Will become the package name attribute in xml testsuite element
     },
-    coverageReporter: {
-        dir: "reports",
-        reporters: [
-          { type: 'html', subdir: 'html' },
-          { type: 'lcov', dir: 'coverage' },
-          { type: 'text-summary' }
-        ]
-    },
-    preprocessors: {
-              'src/**/*.js': ['coverage']
+    coverageIstanbulReporter: {
+      reports: ['html', 'lcovonly', 'text-summary'],
+      fixWebpackSourcePaths: true,
     },
     angularCli: {
       environment: 'dev'
     },
-    reporters: [ 'progress', 'coverage', 'coveralls' ],
+    reporters: [ 'progress', 'coverage-istanbul' ],
     port: 9876,
     // colors: true,
     // Level of logging, can be: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
