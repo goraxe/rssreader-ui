@@ -12,7 +12,7 @@ module.exports = function(config) {
       require('karma-chrome-launcher'),
       require('karma-junit-reporter'),
       require('karma-coveralls'),
-      require('karma-coverage-istanbul-reporter'),
+      require('karma-coverage'),
       require('@angular/cli/plugins/karma')
     ],
     client: {
@@ -25,21 +25,33 @@ module.exports = function(config) {
       useBrowserName: false,
       suite: '' // Will become the package name attribute in xml testsuite element
     },
-    coverageIstanbulReporter: {
-      reports: ['html', 'lcovonly', 'text-summary'],
-      dir: './reports/coverage',
-      fixWebpackSourcePaths: true
+    coverageReporter: {
+        dir: "reports",
+        reporters: [
+          { type: 'html', subdir: 'html' },
+          { type: 'lcov', dir: 'coverage' },
+          { type: 'text-summary' }
+        ]
+    },
+    preprocessors: {
+              'src/**/*.js': ['coverage']
     },
     angularCli: {
       environment: 'dev'
     },
-    reporters: ['progress', 'junit'],
+    reporters: [ 'progress', 'coverage', 'coveralls' ],
     port: 9876,
-    colors: true,
+    // colors: true,
     // Level of logging, can be: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
     autoWatch: true,
-    browsers: ['ChromeHeadless'],
-    singleRun: false
+    browsers: ['chrome_no_sandbox'],
+    customLaunchers: {
+        chrome_no_sandbox: {
+            base: 'ChromeHeadless',
+            flags: ['--headless --no-sandbox']
+        },
+    },
+    singleRun: true
   });
 };
