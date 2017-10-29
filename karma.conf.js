@@ -11,6 +11,7 @@ module.exports = function(config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-junit-reporter'),
+      require('karma-mocha-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular/cli/plugins/karma')
     ],
@@ -31,7 +32,7 @@ module.exports = function(config) {
     angularCli: {
       environment: 'dev'
     },
-    reporters: [ 'progress', 'coverage-istanbul' ],
+    reporters: [  'mocha', 'coverage-istanbul' ],
     port: 9876,
     // colors: true,
     // Level of logging, can be: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
@@ -44,6 +45,6 @@ module.exports = function(config) {
             flags: ['--headless --no-sandbox']
         },
     },
-    singleRun: true
+    singleRun: false
   });
 };
