@@ -9,11 +9,15 @@ exports.config = {
     './e2e/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': process.env.PROTRACTOR_BROWSER || 'chrome'
+    'browserName': process.env.PROTRACTOR_BROWSER || 'chrome',
+    'chromeOptions': {
+      'args': ['--headless'],
+      'binary': require('puppeteer').executablePath()
+    }
   },
   // Only works with Chrome and Firefox
   directConnect: true,
-  baseUrl: 'http://localhost:4200/',
+  baseUrl: 'http://0.0.0.0:4200/',
   framework: 'jasmine2',
   jasmineNodeOpts: {
     showColors: true,
