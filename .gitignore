@@ -25,6 +25,9 @@
 xcuserdata/
 *.sublime-workspace
 
+# vim swap files
+.*.sw?
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
