@@ -149,12 +149,14 @@
     tslib "^1.7.1"
 
 "@angular/language-service@^4.2.6":
-  version "4.4.6"
-  resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-4.4.6.tgz#498ece95c5f6066403bf9fd3c5831af42b45618b"
+  version "4.4.7"
+  resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-4.4.7.tgz#45dea0935c132095a0fdc4610b007f1f57b8fbea"
+  integrity sha512-wUTH1+B1L/bcROduWH/asEpTwx3myQXueqfA5S+JCtR58PZD/OCjnY3rIzei2oxb8MIprhFV0xGl4r8v7fSmDw==
 
 "@angular/platform-browser-dynamic@^4.2.6":
-  version "4.4.6"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.4.6.tgz#4d3d9a6a7bf2cf3de4058a615ae059eff641fa36"
+  version "4.4.7"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.4.7.tgz#c10676f49de5ac604e326cba440ff6a6af6588fe"
+  integrity sha512-or6CB+LzK8zYn7K4rif32UvVadnbdrqBiT+5Yai1szNUUKuseqx2h1dsEgJQamkajsOUM7zjLYq4LrKJEEcm8A==
   dependencies:
     tslib "^1.7.1"
 
